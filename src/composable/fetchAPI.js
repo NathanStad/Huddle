@@ -1,16 +1,27 @@
 const apiUrl = import.meta.env.VITE_API_URL;
 
-export default async function fetchAPI(method, endpoint, data) {
+export default async function fetchAPI(
+  method,
+  endpoint,
+  data,
+  isFormData = false
+) {
   const token = localStorage.getItem("authToken") || "";
+
+  const headers = isFormData
+    ? {
+        Authorization: `Bearer ${token}`,
+      }
+    : {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      };
 
   try {
     const res = await fetch(`${apiUrl}/${endpoint}`, {
       method: method,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: data ? JSON.stringify(data) : null, // Only send body if data exists
+      headers: headers,
+      body: data ? (isFormData ? data : JSON.stringify(data)) : null, // Only send body if data exists
     });
 
     if (!res.ok) {

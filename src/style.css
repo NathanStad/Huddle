@@ -1,20 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Berlin";
+  src: url("./assets/fonts/BRLNSDB.TTF");
+}
+
 @theme {
   --color-green: #6aa24a;
   --color-green-hover: #307409;
   --color-pink: #f9d5e7;
+  --color-pink2: #ff7dbe;
+  --color-pink3: #ffa7d3;
+  --color-dark-pink: #37072a;
   --color-yellow: #f6ee80;
   --color-black: #000000;
+
+  --font-berlin: "Berlin", sans-serif;
+
+  --box-shadow-custom-button: "0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24)";
 }
 
-/* .text-classic {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-} */
+:root {
+  --bg-image: "";
+}
 
 html,
 body {
@@ -25,5 +34,44 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  /* color: #307409; */
+}
+
+.titleImage {
+  background-position: center;
+  background-size: cover;
+}
+
+.titleImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  /* transform: scale(1.1); Prevents dark shadow effect */
+  z-index: 0;
+}
+
+.titleImage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 1;
+}
+
+.neumorphism {
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow: 13px 13px 26px #bebebe, -13px -13px 26px #ffffff;
+}
+
+.neumorphism2 {
+  background: #e0e0e0;
+  box-shadow: inset 13px 13px 26px #bebebe, inset -13px -13px 26px #ffffff;
 }
