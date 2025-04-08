@@ -39,10 +39,14 @@ const handleSubmit = () => {
   <Header />
 
   <div class="overflow-hidden">
-    <section class="flex justify-center items-center relative h-screen titleImage" :style="{
+    <section class="flex justify-center items-center relative h-screen titleImage px-5" :style="{
       '--bg-image': `url(${Images.HOME1})`
     }">
-      <p class="text-white z-50">salut</p>
+      <div class="flex flex-col items-center text-center gap-5 z-50">
+        <p class="text-white font-berlin text-4xl">Become the Coach You Never Had</p>
+        <p class="text-white">Inspiring women to lead, play, and make their mark in football.</p>
+        <PinkButton>Join the Huddle Coach Arena</PinkButton>
+      </div>
     </section>
 
     <PageBody>

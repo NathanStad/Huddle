@@ -9,7 +9,7 @@ const toggleMobileMenu = () => mobileMenuOpen.value = !mobileMenuOpen.value;
 </script>
 
 <template>
-  <header class="sticky top-0 w-full z-50">
+  <header class="fixed top-0 w-full z-99">
     <!-- Desktop -->
     <nav class="hidden lg:flex items-center justify-between bg-pink text-green p-5">
       <router-link to="/">

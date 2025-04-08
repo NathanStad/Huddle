@@ -14,6 +14,8 @@
   --color-pink3: #ffa7d3;
   --color-dark-pink: #37072a;
   --color-yellow: #f6ee80;
+  --color-yellow2: #f0cc04;
+  --color-gold: #dcb404;
   --color-black: #000000;
 
   --font-berlin: "Berlin", sans-serif;
@@ -23,6 +25,12 @@
 
 :root {
   --bg-image: "";
+  --plyr-color-main: #ffffff;
+  --plyr-audio-controls-background: #f6ee80;
+  --plyr-audio-control-color: #000000;
+  --plyr-audio-control-color-hover: #000000;
+  --plyr-control-radius: 100px;
+  --plyr-menu-radius: 100px;
 }
 
 html,
@@ -62,16 +70,6 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
   z-index: 1;
-}
-
-.neumorphism {
-  background: linear-gradient(145deg, #f0f0f0, #cacaca);
-  box-shadow: 13px 13px 26px #bebebe, -13px -13px 26px #ffffff;
-}
-
-.neumorphism2 {
-  background: #e0e0e0;
-  box-shadow: inset 13px 13px 26px #bebebe, inset -13px -13px 26px #ffffff;
 }

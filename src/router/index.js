@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../components/Home.vue";
 import News from "../components/News.vue";
+import Stories from "../components/Stories.vue";
 import Agenda from "../components/Agenda.vue";
 import Opportunities from "../components/Opportunities.vue";
 import Informations from "../components/Informations.vue";
@@ -18,6 +19,12 @@ const routes = [
     path: "/news",
     name: "News",
     component: News,
+    props: true,
+  },
+  {
+    path: "/stories",
+    name: "Stories",
+    component: Stories,
     props: true,
   },
   {

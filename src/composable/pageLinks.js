@@ -20,6 +20,11 @@ const pageLinks = [
     category: "Resources",
   },
   {
+    name: "Stories",
+    path: "/stories",
+    category: "Resources",
+  },
+  {
     name: "Agenda",
     path: "/agenda",
     category: "Resources",

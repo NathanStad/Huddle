@@ -10,6 +10,15 @@ import player1 from "./img/home/player_1.png";
 import player2 from "./img/home/player_2.png";
 import player3 from "./img/home/player_3.png";
 import score from "./img/home/score.svg";
+import playerStories from "./img/stories/player.png";
+import podcast1 from "./img/stories/podcasts/1.png";
+import podcast2 from "./img/stories/podcasts/2.png";
+import podcast3 from "./img/stories/podcasts/3.jpeg";
+
+import blogCover from "./img/blog/blog_cover.png";
+import opportunitiesCover from "./img/opportunities/opportunities_cover.jpeg";
+import storiesCover from "./img/stories/stories_cover.jpeg";
+
 import shop from "./icons/shop.svg";
 import ball from "./icons/ball.svg";
 import caring from "./icons/caring.svg";
@@ -29,6 +38,15 @@ export default {
   PLAYER2: player2,
   PLAYER3: player3,
   SCORE: score,
+  PLAYER_STORIES: playerStories,
+  PODCAST1: podcast1,
+  PODCAST2: podcast2,
+  PODCAST3: podcast3,
+
+  BLOG_COVER: blogCover,
+  OPPORTUNITIES_COVER: opportunitiesCover,
+  STORIES_COVER: storiesCover,
+
   SHOP: shop,
   BALL: ball,
   CARING: caring,
