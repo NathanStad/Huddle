@@ -63,7 +63,7 @@ const addOpportunity = async () => {
     subtitle="Your journey as a football coach starts here." text="Find your team. Build their future." />
 
   <PageBody>
-    <TypicalParagraphe theme="Clubs need you" textColor="text-gold" title="Lead the Game."
+    <TypicalParagraphe theme="Clubs need you" textColor="gold" title="Lead the Game."
       subtitle="It's up to you ! Are you ready to shape the next generation of women's football ?"
       content="Ready to huddle up? Here is your opportunity to make a different. Explore coaching roles and connect directly with clubs and training academies open to women. Search roles by location, level or licence. " />
 

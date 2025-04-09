@@ -18,6 +18,10 @@ import podcast3 from "./img/stories/podcasts/3.jpeg";
 import blogCover from "./img/blog/blog_cover.png";
 import opportunitiesCover from "./img/opportunities/opportunities_cover.jpeg";
 import storiesCover from "./img/stories/stories_cover.jpeg";
+import agendaCover from "./img/agenda/agenda_cover.png";
+import informationsCover from "./img/informations/informations_cover.jpeg";
+import profileCover from "./img/profile/profile_cover.jpeg";
+import contactCover from "./img/contact/contact_cover.png";
 
 import shop from "./icons/shop.svg";
 import ball from "./icons/ball.svg";
@@ -48,6 +52,10 @@ export default {
   BLOG_COVER: blogCover,
   OPPORTUNITIES_COVER: opportunitiesCover,
   STORIES_COVER: storiesCover,
+  AGENDA_COVER: agendaCover,
+  INFORMATIONS_COVER: informationsCover,
+  PROFILE_COVER: profileCover,
+  CONTACT_COVER: contactCover,
 
   SHOP: shop,
   BALL: ball,

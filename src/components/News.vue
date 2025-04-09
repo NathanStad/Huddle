@@ -72,7 +72,7 @@ fetchBlogs();
 
   <PageBody>
     <div class="my-15">
-      <TypicalParagraphe theme="News" textColor="text-green" title="What's new in women's football?"
+      <TypicalParagraphe theme="News" textColor="green" title="What's new in women's football?"
         subtitle="From UEFA matches to local coaching events, this is where it happens first."
         content="Follow the latest trends, match results, reports, and Huddle updates in real-time." />
 
@@ -80,7 +80,7 @@ fetchBlogs();
         <NewsCard v-for="news in blogDataNews" :blogData="news" />
       </div>
 
-      <TypicalParagraphe theme="Articles" textColor="text-pink2" title="Dive deeper into the game."
+      <TypicalParagraphe theme="Articles" textColor="pink2" title="Dive deeper into the game."
         subtitle="Explore in-depth articles written to encourage, educate, and equip women to become coaches."
         content="Here, we break down stereotypes, spotlight inspiring journeys and share valuable resources. Our topics include; The road to UEFA certifications, Inside a coach's mindset, Role model highlights, Tactical & leadership breakdowns." />
 

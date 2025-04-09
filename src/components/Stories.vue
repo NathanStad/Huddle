@@ -73,14 +73,13 @@ const addPodcast = async () => {
     text="Discover real stories of women who stepped up, coached, and changed their path — and others'. Watch inspiring interviews, quotes and snapshots of their journey." />
 
   <PageBody>
-    <p class="font-semibold text-pink2 text-lg mb-5">Success stories</p>
-    <TypicalParagraphe title="They coached. They overcame. They inspired." subtitle="Meet the women who took the lead — on and off the pitch. In this section, we spotlight coaches who've turned
+    <TypicalParagraphe theme="Success stories" textColor="pink2" title="They coached. They overcame. They inspired."
+      subtitle="Meet the women who took the lead — on and off the pitch. In this section, we spotlight coaches who've turned
       passion into purpose, with moving testimonials and powerful interviews." content="Explore our diverse content types, including video interviews like ”A Day in the Life of a Coach”, inspirational
       clips from matches, training, and life moments, articles on resilience and success and experiences from our
       Huddle community." />
 
-    <p class="font-semibold text-yellow2 text-lg mt-15 mb-5">Podcasts</p>
-    <TypicalParagraphe title="Coaching analyzed, explained and shared."
+    <TypicalParagraphe theme="Podcasts" textColor="yellow2" title="Coaching analyzed, explained and shared."
       subtitle="Listen to our exclusive podcast series featuring female coaches, football experts and training specialists."
       content="Episodes cover; match analysis & breakdowns, real coaching experiences, interviews with professionals, tips, challenges & mindset tools" />
 

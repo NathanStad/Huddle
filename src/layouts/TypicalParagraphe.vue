@@ -24,7 +24,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <p :class="`font-semibold text-lg mb-5 ${textColor}`">{{ theme }}</p>
+  <p :class="`font-semibold text-lg mb-5 text-${textColor}`">{{ theme }}</p>
 
   <div class="space-y-5">
     <h1 class="text-4xl font-semibold leading-12">{{ title }}</h1>
