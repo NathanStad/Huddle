@@ -15,8 +15,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="bg-[#FFFEEF] border-2 border-yellow rounded-2xl p-5 text-dark-pink">
-    <div class="flex items-start gap-3">
+  <section class="bg-[#FFFEEF] border-2 border-yellow rounded-2xl p-5 text-dark-pink w-full md:w-1/2 lg:w-1/3">
+    <div class="flex items-start justify-between gap-3">
       <p class="font-medium text-gold text-sm mb-10">Ep. {{ podcastData.number.toString().padStart(2, '0') }} - {{
         podcastData.theme }}</p>
       <img v-if="podcastData.image" :src="podcastData.image" :alt="podcastData.title"

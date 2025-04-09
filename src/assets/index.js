@@ -24,6 +24,8 @@ import ball from "./icons/ball.svg";
 import caring from "./icons/caring.svg";
 import arrow from "./icons/arrow.svg";
 import check from "./icons/check.svg";
+import location from "./icons/location.svg";
+import contract from "./icons/contract.svg";
 
 export default {
   MAIN_LOGO: mainLogo,
@@ -52,4 +54,6 @@ export default {
   CARING: caring,
   ARROW: arrow,
   CHECK: check,
+  LOCATION: location,
+  CONTRACT: contract,
 };

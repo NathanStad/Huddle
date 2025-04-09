@@ -28,7 +28,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="flex justify-center items-center relative h-screen titleImage px-5 mb-15" :style="{
+  <section class="flex justify-start items-center relative h-screen titleImage px-5 mb-15" :style="{
     '--bg-image': `url(${img})`
   }">
     <div class="flex flex-col items-start text-start gap-1 self-end pb-10 z-50">

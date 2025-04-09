@@ -28,7 +28,7 @@ const fetchBlogs = async () => {
     blogDataArticles.value = await fetchAPI('GET', 'articles/article');
     blogDataNews.value = await fetchAPI('GET', 'articles/news');
   } catch (error) {
-    console.error('Error fetching user data:', error);
+    console.error('Error fetching news data:', error);
   } finally {
     loading.value = false;
   }

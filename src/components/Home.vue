@@ -55,7 +55,8 @@ const handleSubmit = () => {
           subtitle="Women are changing the game. But the game still needs more coaches." description="In amateur clubs, in youth leagues, in professional training grounds female coaches are underrepresented
           everywhere. What if your voice, your energy, your perspective was exactly what's missing? Discover our
           trainings, mentorships and entry points into coaching!" buttonText="See Coaching Programs">
-          <img :src="Images.HOME2" alt="" class="my-5 rounded-2xl">
+
+          <img :src="Images.HOME2" alt="" class="my-5 rounded-2xl w-full md:w-1/2 lg:w-1/3">
         </HomeSection>
 
         <HomeSection title="Who We Are" subtitle="A media & movement dedicated to women in football."
@@ -72,21 +73,21 @@ const handleSubmit = () => {
           </div>
         </HomeSection>
 
-        <img :src="Images.PLAYER1" alt="" class="-ml-20">
+        <img :src="Images.PLAYER1" alt="" class="-ml-20 w-full md:w-1/2 lg:w-1/3">
 
         <HomeSection title="ShePredicts" subtitle="Make your guess. Own your play." description="Vote on UEFA women's matches during live competitions and compete with your friends, all without betting
           money. A fun way to engage with the game, show your football instincts and join the community."
           :link="{ text: 'Create your profile to start your predictions', url: 'profile' }"
           :button="{ text: 'Start predicting now', url: 'shepredicts' }" />
 
-        <img :src="Images.SCORE" alt="Score" class="py-10">
+        <img :src="Images.SCORE" alt="Score" class="py-10 w-full md:w-1/2 lg:w-1/3">
 
         <HomeSection title="Create your own league" subtitle="Compete with your friends!"
           description="Design your dream football league, then bet on every women match! Invite friends and see who has the best football IQ or the luckiest gut. Whether you're playing for fun or bragging rights, the thrill of the game is in your hands!"
           :link="{ text: 'Watch how it works', url: 'shepredicts' }"
           :button="{ text: 'Start your league now', url: 'shepredicts' }" />
 
-        <img :src="Images.PLAYER2" alt="" class="ml-25">
+        <img :src="Images.PLAYER2" alt="" class="ml-25 w-full md:w-1/2 lg:w-1/3">
 
         <HomeSection title="True stories" subtitle="They did it. So can you!"
           description="Discover real stories of women who stepped up, coached, and changed their path — and others'. Watch inspiring interviews, quotes and snapshots of their journey."
@@ -95,19 +96,19 @@ const handleSubmit = () => {
         <HomeSection title="Live News" subtitle="What's happening in women's football & coaching?"
           description="Stay up to date with our latest articles, UEFA insights, training opportunities, and expert takes. Everything you need to stay informed & inspired." />
 
-        <div class="-mt-10">
-          <NewsCard v-if="!loading" :blogData="blogData" />
-        </div>
+        <NewsCard v-if="!loading" :blogData="blogData" />
 
         <HomeSection title="Newsletter" subtitle="Let's keep in touch. We'll send you a nice letter once per week"
           description="Be the first to receive new stories, upcoming training dates, and exclusive Huddle content.">
           <ul class="flex flex-col gap-4 py-3">
-            <li class="flex items-center gap-3"><img :src="Images.CHECK" alt="Pink check icon">Latest releases and tips
+            <li class="flex items-center gap-3"><img :src="Images.CHECK" alt="Pink check icon">
+              Latest releases and tips
             </li>
-            <li class="flex items-center gap-3"><img :src="Images.CHECK" alt="Pink check icon">Our favourite articles
-              each week</li>
-            <li class="flex items-center gap-3"><img :src="Images.CHECK" alt="Pink check icon">Exclusive interviews with
-              big names
+            <li class="flex items-center gap-3"><img :src="Images.CHECK" alt="Pink check icon">
+              Our favourite articles each week
+            </li>
+            <li class="flex items-center gap-3"><img :src="Images.CHECK" alt="Pink check icon">
+              Exclusive interviews with big names
             </li>
           </ul>
 
@@ -124,7 +125,7 @@ const handleSubmit = () => {
           </form>
         </HomeSection>
 
-        <img :src="Images.PLAYER3" alt="" class="ml-20">
+        <img :src="Images.PLAYER3" alt="" class="ml-20 w-full md:w-1/2 lg:w-1/3">
       </div>
     </PageBody>
 

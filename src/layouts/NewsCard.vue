@@ -53,8 +53,8 @@ const tagStyles = props.blogData.tags.map((_, index) => {
 </script>
 
 <template>
-  <section class="flex flex-col gap-4">
-    <img :src="blogData.image" :alt="blogData.title" class="rounded-2xl">
+  <section class="flex flex-col gap-4 w-full">
+    <img :src="blogData.image" :alt="blogData.title" class="rounded-2xl w-full md:w-1/2 lg:w-1/3">
     <p :class="`${textColor} text-sm font-semibold`">{{ blogData.author }} • {{ new
       Date(blogData.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }) }}</p>
     <h2 class="font-semibold text-xl text-dark-pink">{{ blogData.title }}</h2>

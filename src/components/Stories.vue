@@ -20,7 +20,7 @@ const fetchPodcasts = async () => {
   try {
     podcasts.value = await fetchAPI('GET', 'podcasts');
   } catch (error) {
-    console.error('Error fetching user data:', error);
+    console.error('Error fetching podcasts data:', error);
   } finally {
     loading.value = false;
   }
@@ -88,7 +88,7 @@ const addPodcast = async () => {
       <PodcastCard v-for="podcast in podcasts" :key="podcast._id" :podcastData="podcast" />
     </div>
 
-    <img :src="Images.PLAYER_STORIES" alt="" class="-ml-25">
+    <img :src="Images.PLAYER_STORIES" alt="" class="-ml-25 w-full md:w-1/2 lg:w-1/3">
 
     <form @submit.prevent="addPodcast" class="my-10">
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">

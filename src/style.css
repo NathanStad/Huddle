@@ -61,7 +61,7 @@ body {
   background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
-  /* transform: scale(1.1); Prevents dark shadow effect */
+  /* transform: scale(1.1); */
   z-index: 0;
 }
 
