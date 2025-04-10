@@ -13,7 +13,7 @@ watch(mobileMenuOpen, (isOpen) => {
 </script>
 
 <template>
-  <!-- hidden safe list for Tailwind -->
+  <!-- Hidden safe list for Tailwind -->
   <div
     class="bg-pink bg-pink2 bg-pink3 bg-gold bg-gold2 bg-yellow bg-green text-dark-pink hover:text-dark-pink hover:bg-gold hover:bg-gold2 hover:bg-green-hover hover:bg-pink hover:bg-pink2 hover:bg-pink3">
   </div>
@@ -33,7 +33,7 @@ watch(mobileMenuOpen, (isOpen) => {
     </nav>
 
     <!-- Mobile -->
-    <div class="flex lg:hidden justify-between items-center bg-white p-5">
+    <div class="flex lg:hidden justify-between items-center bg-white p-5 shadow-md">
       <router-link to="/">
         <img :src="Images.MAIN_LOGO" alt="Logo Huddle">
       </router-link>
