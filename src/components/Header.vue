@@ -1,14 +1,23 @@
 <script setup>
 import HeaderLink from '../layouts/HeaderLink.vue';
 import Images from '../assets';
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import pageLinks from '../composable/pageLinks';
 
 const mobileMenuOpen = ref(false);
 const toggleMobileMenu = () => mobileMenuOpen.value = !mobileMenuOpen.value;
+
+watch(mobileMenuOpen, (isOpen) => {
+  document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+});
 </script>
 
 <template>
+  <!-- hidden safe list for Tailwind -->
+  <div
+    class="bg-pink bg-pink2 bg-pink3 bg-gold bg-gold2 bg-yellow bg-green text-dark-pink hover:text-dark-pink hover:bg-gold hover:bg-gold2 hover:bg-green-hover hover:bg-pink hover:bg-pink2 hover:bg-pink3">
+  </div>
+
   <header class="fixed top-0 w-full z-99">
     <!-- Desktop -->
     <nav class="hidden lg:flex items-center justify-between bg-pink text-green p-5">
@@ -34,7 +43,7 @@ const toggleMobileMenu = () => mobileMenuOpen.value = !mobileMenuOpen.value;
           <img :src="Images.PROFILE" alt="Profile Icon">
         </router-link>
 
-        <button @click="toggleMobileMenu" class="text-dark-pink focus:outline-none cursor-pointer">
+        <button @click="toggleMobileMenu" class="text-dark-pink focus:outline-none cursor-pointer z-50">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path v-if="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M6 18L18 6M6 6l12 12" />

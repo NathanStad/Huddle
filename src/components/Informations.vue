@@ -5,6 +5,73 @@ import TitleSection from "../layouts/TitleSection.vue";
 import PageBody from "../layouts/PageBody.vue";
 import Images from '../assets';
 import TypicalParagraphe from "../layouts/TypicalParagraphe.vue";
+import InformationsImages from "../layouts/InformationsImages.vue";
+import InformationsCard from "../layouts/InformationsCard.vue";
+
+const informationsData = [
+  {
+    image: Images.INFORMATIONS2,
+    imageAlt: "Female players training",
+    imageDescr: "Passing on her passion to younger players.",
+    imageUrl: "/",
+    title: "C Basic License (Entry-Level)",
+    subtitle: "Women currently coaching or planning to coach youth teams.",
+    perks: [
+      "Team management basics",
+      "Tactical principles",
+      "Youth player development",
+      "First-level evaluation",
+    ],
+    locations: [
+      "Echallens", "Kriens", "Fribourg", "Ovronnaz"
+    ],
+    duration: "6 days",
+    cost: "~800 CHF",
+    leadsTo: "UEFA C License",
+  },
+  {
+    image: Images.INFORMATIONS3,
+    imageAlt: "Female players celebrating",
+    imageDescr: "Equipping future stars",
+    imageUrl: "/",
+    title: "UEFA C License",
+    subtitle: "Women aiming to coach at club level with prior experience",
+    perks: [
+      "Game philosophy & principles",
+      "Tactical transitions",
+      "Communication & leadership",
+      "Evaluations & exams",
+    ],
+    locations: [
+      "Lausanne", "Neuchâtel", "Geneva"
+    ],
+    duration: "6 days",
+    cost: "1200 CHF",
+    leadsTo: "UEFA B License",
+  },
+  {
+    image: Images.INFORMATIONS4,
+    imageAlt: "Female coach holding a football",
+    imageDescr: "Progress by learning winning tactics and strategies",
+    imageUrl: "/",
+    title: "UEFA B / Youth B / A License",
+    subtitle: "Progressive system for higher-level coaching.",
+    perks: [
+      "High-performance training",
+      "Physical prep (explosiveness, fatigue management)",
+      "Game systems & strategy",
+      "Team psychology",
+    ],
+    extra: "*Includes: UEFA B, A Youth, A UEFA, and Pro Licenses.",
+    locations: [
+      "Lausanne", "Fribourg", "Geneva"
+    ],
+    requirements: "Prior licenses + club experience",
+    duration: "From 6 to 37 days depending on level",
+    cost: "1200 CHF",
+    leadsTo: "Certification accredited by ASF (Swiss Football Association)",
+  },
+]
 </script>
 
 <template>
@@ -17,6 +84,12 @@ import TypicalParagraphe from "../layouts/TypicalParagraphe.vue";
     <TypicalParagraphe theme="Training" textColor="green" title="Become a Coach"
       subtitle="Learn about the different certifications, course durations, costs, training locations and how to apply for the one that's right for you."
       content="" />
+
+    <InformationsImages :img="Images.INFORMATIONS1" alt="Female players training"
+      text="Learn how to do soccer training." url="/" />
+
+    <InformationsCard v-for="informations in informationsData" :key="informations._id"
+      :informationData="informations" />
   </PageBody>
 
   <Footer />

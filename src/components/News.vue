@@ -13,14 +13,14 @@ import PinkButton from "../layouts/PinkButton.vue";
 const blogDataArticles = ref([]);
 const blogDataNews = ref([]);
 const loading = ref(false);
-// const imageFile = ref(null);
-// const newArticle = ref({
-//   title: "",
-//   content: "",
-//   author: "",
-//   tags: [],
-//   type: "",
-// });
+const imageFile = ref(null);
+const newArticle = ref({
+  title: "",
+  content: "",
+  author: "",
+  tags: [],
+  type: "",
+});
 
 const fetchBlogs = async () => {
   loading.value = true;
@@ -35,32 +35,32 @@ const fetchBlogs = async () => {
 }
 fetchBlogs();
 
-// const handleFileUpload = (e) => {
-//   imageFile.value = e.target.files[0];
-// };
+const handleFileUpload = (e) => {
+  imageFile.value = e.target.files[0];
+};
 
-// const addArticle = async () => {
-//   const formData = new FormData();
-//   formData.append("title", newArticle.value.title);
-//   formData.append("content", newArticle.value.content);
-//   formData.append("author", newArticle.value.author);
-//   formData.append("image", imageFile.value);
-//   formData.append("type", newArticle.value.type);
+const addArticle = async () => {
+  const formData = new FormData();
+  formData.append("title", newArticle.value.title);
+  formData.append("content", newArticle.value.content);
+  formData.append("author", newArticle.value.author);
+  formData.append("image", imageFile.value);
+  formData.append("type", newArticle.value.type);
 
-//   // Parse comma-separated tags string into array
-//   const tagsArray = newArticle.value.tags
-//     .split(",")
-//     .map(tag => tag.trim())
-//     .filter(Boolean);
-//   tagsArray.forEach(tag => formData.append("tags", tag));
+  // Parse comma-separated tags string into array
+  const tagsArray = newArticle.value.tags
+    .split(",")
+    .map(tag => tag.trim())
+    .filter(Boolean);
+  tagsArray.forEach(tag => formData.append("tags", tag));
 
-//   try {
-//     await fetchAPI("POST", "articles", formData, true);
-//     await fetchBlogs(); // Refresh the list after posting
-//   } catch (error) {
-//     console.error("Error adding article:", error);
-//   }
-// };
+  try {
+    await fetchAPI("POST", "articles", formData, true);
+    await fetchBlogs(); // Refresh the list after posting
+  } catch (error) {
+    console.error("Error adding article:", error);
+  }
+};
 </script>
 
 <template>
@@ -89,7 +89,7 @@ fetchBlogs();
       </div>
     </div>
 
-    <!-- <form @submit.prevent="addPodcast" class="my-10">
+    <form @submit.prevent="addPodcast" class="my-10">
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">
         <input v-model="newArticle.title" type="text" placeholder="Title" class="p-2 border rounded">
         <textarea v-model="newArticle.content" placeholder="Content" class="p-2 border rounded h-32"></textarea>
@@ -98,12 +98,11 @@ fetchBlogs();
         <select v-model="newArticle.type" class="p-2 border rounded">
           <option value="news">News</option>
           <option value="article">Article</option>
-          <option value="podcast">Podcast</option>
         </select>
         <input type="file" @change="handleFileUpload" class="p-2 border rounded">
       </div>
-      <PinkButton type="submit">Ajouter un article</PinkButton>
-    </form> -->
+      <PinkButton type="submit">Add article</PinkButton>
+    </form>
   </PageBody>
 
   <Footer />

@@ -21,8 +21,10 @@ const props = defineProps({
     <p class="mb-4">{{ opportunityData.description }}</p>
 
     <div class="space-y-2 text-dark-pink/70">
-      <p class="flex items-center gap-2"><img :src="Images.LOCATION" alt=""><span>{{ opportunityData.NPA }} {{ opportunityData.location }}</span></p>
-      <p class="flex items-center gap-2"><img :src="Images.CONTRACT" alt=""><span class="capitalize">{{ opportunityData.contract }}</span></p>
+      <p class="flex items-center gap-2"><img :src="Images.LOCATION" alt=""><span>{{ opportunityData.NPA }} {{
+        opportunityData.location }}</span></p>
+      <p class="flex items-center gap-2"><img :src="Images.DURATION" alt=""><span class="capitalize">{{
+        opportunityData.contract }}</span></p>
     </div>
   </section>
 </template>

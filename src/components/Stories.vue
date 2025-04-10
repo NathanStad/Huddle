@@ -79,7 +79,7 @@ const addPodcast = async () => {
       clips from matches, training, and life moments, articles on resilience and success and experiences from our
       Huddle community." />
 
-    <TypicalParagraphe theme="Podcasts" textColor="yellow2" title="Coaching analyzed, explained and shared."
+    <TypicalParagraphe theme="Podcasts" textColor="gold" title="Coaching analyzed, explained and shared."
       subtitle="Listen to our exclusive podcast series featuring female coaches, football experts and training specialists."
       content="Episodes cover; match analysis & breakdowns, real coaching experiences, interviews with professionals, tips, challenges & mindset tools" />
 

@@ -14,6 +14,10 @@ import playerStories from "./img/stories/player.png";
 import podcast1 from "./img/stories/podcasts/1.png";
 import podcast2 from "./img/stories/podcasts/2.png";
 import podcast3 from "./img/stories/podcasts/3.jpeg";
+import informations1 from "./img/informations/informations_1.jpeg";
+import informations2 from "./img/informations/informations_2.jpeg";
+import informations3 from "./img/informations/informations_3.png";
+import informations4 from "./img/informations/informations_4.jpeg";
 
 import blogCover from "./img/blog/blog_cover.png";
 import opportunitiesCover from "./img/opportunities/opportunities_cover.jpeg";
@@ -29,7 +33,8 @@ import caring from "./icons/caring.svg";
 import arrow from "./icons/arrow.svg";
 import check from "./icons/check.svg";
 import location from "./icons/location.svg";
-import contract from "./icons/contract.svg";
+import duration from "./icons/duration.svg";
+import link from "./icons/link.svg";
 
 export default {
   MAIN_LOGO: mainLogo,
@@ -48,6 +53,10 @@ export default {
   PODCAST1: podcast1,
   PODCAST2: podcast2,
   PODCAST3: podcast3,
+  INFORMATIONS1: informations1,
+  INFORMATIONS2: informations2,
+  INFORMATIONS3: informations3,
+  INFORMATIONS4: informations4,
 
   BLOG_COVER: blogCover,
   OPPORTUNITIES_COVER: opportunitiesCover,
@@ -63,5 +72,6 @@ export default {
   ARROW: arrow,
   CHECK: check,
   LOCATION: location,
-  CONTRACT: contract,
+  DURATION: duration,
+  LINK: link,
 };
