@@ -9,6 +9,7 @@
 @theme {
   --color-green: #6aa24a;
   --color-green-hover: #307409;
+  --color-green-bg: #efffe3;
   --color-pink: #f9d5e7;
   --color-pink2: #ff7dbe;
   --color-pink3: #ffa7d3;
@@ -16,6 +17,7 @@
   --color-yellow: #f6ee80;
   --color-gold: #dcb404;
   --color-gold2: #fcdc4c;
+  --color-gold-bg: #fffeef;
   --color-black: #000000;
 
   --font-berlin: "Berlin", sans-serif;

@@ -15,7 +15,7 @@ watch(mobileMenuOpen, (isOpen) => {
 <template>
   <!-- Hidden safe list for Tailwind -->
   <div
-    class="bg-pink bg-pink2 bg-pink3 bg-gold bg-gold2 bg-yellow bg-green text-dark-pink hover:text-dark-pink hover:bg-gold hover:bg-gold2 hover:bg-green-hover hover:bg-pink hover:bg-pink2 hover:bg-pink3">
+    class="bg-pink bg-pink2 bg-pink3 bg-gold bg-gold2 bg-yellow bg-green bg-gold-bg bg-green-bg text-dark-pink border-gold border-green hover:text-dark-pink hover:bg-gold hover:bg-gold2 hover:bg-green-hover hover:bg-pink hover:bg-pink2 hover:bg-pink3">
   </div>
 
   <header class="fixed top-0 w-full z-99">

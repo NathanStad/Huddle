@@ -10,6 +10,18 @@ const props = defineProps({
     type: Object,
     required: true
   },
+
+  bgColor: {
+    type: String,
+    required: false,
+    default: "gold-bg"
+  },
+
+  secondaryColor: {
+    type: String,
+    required: false,
+    default: "gold"
+  }
 });
 
 // Refs for DOM elements
@@ -41,16 +53,16 @@ const toggleAccordion = async () => {
 
 <template>
   <section
-    class="bg-[#FFFEEF] border-2 border-yellow rounded-2xl p-5 text-dark-pink w-full md:w-1/2 lg:w-1/3 overflow-hidden mb-5">
+    :class="`bg-${bgColor} border-2 border-${secondaryColor} rounded-2xl p-5 text-dark-pink w-full md:w-1/2 lg:w-1/3 overflow-hidden mb-5`">
     <div class="flex justify-between gap-3 items-start mb-3" @click="toggleAccordion">
       <h2 class="font-semibold text-lg mb-2">{{ faqData.question }}</h2>
       <p
-        class="text-gold border-2 border-gold rounded-full w-7 h-7 aspect-square text-xl font-semibold flex items-center justify-center cursor-pointer">
+        :class="`text-${secondaryColor} border-2 border-${secondaryColor} rounded-full w-7 h-7 aspect-square text-xl font-semibold flex items-center justify-center cursor-pointer`">
         {{ textToggle ? '+' : '-' }}
       </p>
     </div>
 
-    <div ref="answerRef" style="height: 0; overflow: hidden;">
+    <div ref="answerRef" class="text-dark-pink/70" style="height: 0; overflow: hidden;">
       <ul v-if="faqData.answer.length > 1" class="list-disc pl-5 space-y-2">
         <li v-for="answer in faqData.answer" class="text-xs font-medium">
           {{ answer }}

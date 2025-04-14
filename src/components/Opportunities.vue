@@ -67,9 +67,18 @@ const addOpportunity = async () => {
       subtitle="It's up to you ! Are you ready to shape the next generation of women's football ?"
       content="Ready to huddle up? Here is your opportunity to make a different. Explore coaching roles and connect directly with clubs and training academies open to women. Search roles by location, level or licence. " />
 
-    <div class="flex flex-col gap-10 my-10">
-      <OpportunitiesCard v-for="opportunity in opportunities" :key="opportunity._id" :opportunityData="opportunity" />
+    <div>
+      <div class="flex justify-between gap-4">
+        <input type="text" placeholder="Search keywords" class="p-2 border rounded-lg flex-1">
+        <img :src="Images.FILTER" alt="Filters" class="aspect-square border border-dark-pink/70 rounded-lg p-3 cursor-pointer">
+      </div>
     </div>
+
+    <section class="flex flex-col gap-10 my-10">
+      <OpportunitiesCard v-for="opportunity in opportunities" :key="opportunity._id" :opportunityData="opportunity" />
+    </section>
+
+    <img :src="Images.PLAYER1" alt="" class="-ml-20 w-full md:w-1/2 lg:w-1/3">
 
     <form @submit.prevent="addOpportunity" class="my-10">
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">

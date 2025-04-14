@@ -35,6 +35,9 @@ import check from "./icons/check.svg";
 import location from "./icons/location.svg";
 import duration from "./icons/duration.svg";
 import link from "./icons/link.svg";
+import cost from "./icons/cost.svg";
+import leadsTo from "./icons/stars.svg";
+import filter from "./icons/filter.svg";
 
 export default {
   MAIN_LOGO: mainLogo,
@@ -74,4 +77,7 @@ export default {
   LOCATION: location,
   DURATION: duration,
   LINK: link,
+  COST: cost,
+  LEADS_TO: leadsTo,
+  FILTER: filter,
 };

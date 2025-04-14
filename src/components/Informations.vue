@@ -7,6 +7,8 @@ import Images from '../assets';
 import TypicalParagraphe from "../layouts/TypicalParagraphe.vue";
 import InformationsImages from "../layouts/InformationsImages.vue";
 import InformationsCard from "../layouts/InformationsCard.vue";
+import faqData from "../composable/faqData";
+import FAQCard from "../layouts/FAQCard.vue";
 
 const informationsData = [
   {
@@ -88,8 +90,38 @@ const informationsData = [
     <InformationsImages :img="Images.INFORMATIONS1" alt="Female players training"
       text="Learn how to do soccer training." url="/" />
 
-    <InformationsCard v-for="informations in informationsData" :key="informations._id"
-      :informationData="informations" />
+    <section class="space-y-15 py-10">
+      <InformationsCard v-for="informations in informationsData" :key="informations._id"
+        :informationData="informations" />
+    </section>
+
+    <section class="space-y-5 mt-5">
+      <h2 class="font-berlin text-4xl">Specialized Licenses</h2>
+
+      <div>
+        <h3 class="text-2xl">Goalkeeper Coach</h3>
+        <p>2-15 days (Levels 1 to A)</p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl">Physical Trainer</h3>
+        <p>Levels 1 to 3 (2-6 days per level)</p>
+      </div>
+
+      <div>
+        <h3 class="text-2xl">Futsal Coach</h3>
+        <p>Entry course (2 days)</p>
+      </div>
+    </section>
+
+    <img :src="Images.PLAYER2" alt="" class="ml-25 w-full md:w-1/2 lg:w-1/3">
+
+    <TypicalParagraphe theme="FAQ" textColor="green" title="Everything you're wondering about"
+      subtitle="Got questions? We've got answers." content="" />
+
+    <div class="flex flex-col gap-4 mb-15">
+      <FAQCard v-for="faq in faqData" :faqData="faq" bgColor="green-bg" secondaryColor="green" />
+    </div>
   </PageBody>
 
   <Footer />
