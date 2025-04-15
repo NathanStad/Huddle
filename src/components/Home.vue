@@ -45,7 +45,7 @@ const handleSubmit = () => {
       <div class="flex flex-col items-center text-center gap-5 z-50">
         <p class="text-white font-berlin text-4xl">Become the Coach You Never Had</p>
         <p class="text-white">Inspiring women to lead, play, and make their mark in football.</p>
-        <PinkButton>Join the Huddle Coach Arena</PinkButton>
+        <PinkButton url="profile">Join the Huddle Coach Arena</PinkButton>
       </div>
     </section>
 
@@ -91,7 +91,7 @@ const handleSubmit = () => {
 
         <HomeSection title="True stories" subtitle="They did it. So can you!"
           description="Discover real stories of women who stepped up, coached, and changed their path — and others'. Watch inspiring interviews, quotes and snapshots of their journey."
-          :link="{ text: 'See our blog', url: 'news' }" :button="{ text: 'Listen to other stories', url: 'news' }" />
+          :link="{ text: 'See our blog', url: 'news' }" :button="{ text: 'Listen to other stories', url: 'stories' }" />
 
         <HomeSection title="Live News" subtitle="What's happening in women's football & coaching?"
           description="Stay up to date with our latest articles, UEFA insights, training opportunities, and expert takes. Everything you need to stay informed & inspired." />

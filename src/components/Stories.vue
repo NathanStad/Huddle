@@ -102,7 +102,7 @@ const addPodcast = async () => {
         <label for="img">Image upload</label>
         <input type="file" id="img" @change="handleImageUpload" class="p-2 border rounded cursor-pointer">
       </div>
-      <PinkButton type="submit">Ajouter un podcast</PinkButton>
+      <PinkButton type="submit" class="w-full">Ajouter un podcast</PinkButton>
     </form>
   </PageBody>
 

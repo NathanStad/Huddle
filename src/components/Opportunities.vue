@@ -9,9 +9,19 @@ import { ref } from "vue";
 import fetchAPI from "../composable/fetchAPI";
 import PinkButton from "../layouts/PinkButton.vue";
 import OpportunitiesCard from "../layouts/OpportunitiesCard.vue";
+import Filters from "./Filters.vue";
 
 const opportunities = ref([]);
 const loading = ref(false);
+const isSettingsPopupOpen = ref(false);
+
+const openSettingsPopup = () => {
+  isSettingsPopupOpen.value = true;
+};
+
+const closeSettingsPopup = () => {
+  isSettingsPopupOpen.value = false;
+};
 
 const fetchOpportunities = async () => {
   loading.value = true;
@@ -45,8 +55,6 @@ const addOpportunity = async () => {
   formData.append("location", newOpportunity.value.location);
   formData.append("contract", newOpportunity.value.contract);
 
-  console.log(formData);
-
   try {
     await fetchAPI("POST", "opportunities", newOpportunity.value);
     await fetchOpportunities(); // Refresh the list after posting
@@ -67,12 +75,14 @@ const addOpportunity = async () => {
       subtitle="It's up to you ! Are you ready to shape the next generation of women's football ?"
       content="Ready to huddle up? Here is your opportunity to make a different. Explore coaching roles and connect directly with clubs and training academies open to women. Search roles by location, level or licence. " />
 
-    <div>
+    <!-- Filter -->
+    <section>
       <div class="flex justify-between gap-4">
         <input type="text" placeholder="Search keywords" class="p-2 border rounded-lg flex-1">
-        <img :src="Images.FILTER" alt="Filters" class="aspect-square border border-dark-pink/70 rounded-lg p-3 cursor-pointer">
+        <img :src="Images.FILTER" alt="Filters"
+          class="aspect-square border border-dark-pink/70 rounded-lg p-3 cursor-pointer" @click="openSettingsPopup">
       </div>
-    </div>
+    </section>
 
     <section class="flex flex-col gap-10 my-10">
       <OpportunitiesCard v-for="opportunity in opportunities" :key="opportunity._id" :opportunityData="opportunity" />
@@ -99,6 +109,8 @@ const addOpportunity = async () => {
       <PinkButton type="submit">Add opportunity</PinkButton>
     </form>
   </PageBody>
+
+  <Filters :visible="isSettingsPopupOpen" @close="closeSettingsPopup" />
 
   <Footer />
 </template>

@@ -8,6 +8,7 @@ import Informations from "../components/Informations.vue";
 import ShePredicts from "../components/ShePredicts.vue";
 import Profile from "../components/Profile.vue";
 import Contact from "../components/Contact.vue";
+import EventDetails from "../components/EventDetails.vue";
 
 const routes = [
   {
@@ -31,6 +32,12 @@ const routes = [
     path: "/agenda",
     name: "Agenda",
     component: Agenda,
+    props: true,
+  },
+  {
+    path: "/agenda/:id",
+    name: "EventDetails",
+    component: EventDetails,
     props: true,
   },
   {

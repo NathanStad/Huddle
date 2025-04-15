@@ -25,8 +25,8 @@ const newArticle = ref({
 const fetchBlogs = async () => {
   loading.value = true;
   try {
-    blogDataArticles.value = await fetchAPI('GET', 'articles/article');
-    blogDataNews.value = await fetchAPI('GET', 'articles/news');
+    blogDataArticles.value = await fetchAPI('GET', 'articles/type/article');
+    blogDataNews.value = await fetchAPI('GET', 'articles/type/news');
   } catch (error) {
     console.error('Error fetching news data:', error);
   } finally {
@@ -89,7 +89,7 @@ const addArticle = async () => {
       </div>
     </div>
 
-    <form @submit.prevent="addPodcast" class="my-10">
+    <form @submit.prevent="addArticle" class="my-10">
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">
         <input v-model="newArticle.title" type="text" placeholder="Title" class="p-2 border rounded">
         <textarea v-model="newArticle.content" placeholder="Content" class="p-2 border rounded h-32"></textarea>
