@@ -6,6 +6,7 @@ import Agenda from "../components/Agenda.vue";
 import Opportunities from "../components/Opportunities.vue";
 import Informations from "../components/Informations.vue";
 import ShePredicts from "../components/ShePredicts/ShePredicts.vue";
+import ShePredictsHome from "../components/ShePredicts/ShePredictsHome.vue";
 import Profile from "../components/Profile.vue";
 import Contact from "../components/Contact.vue";
 import EventDetails from "../components/EventDetails.vue";
@@ -50,6 +51,12 @@ const routes = [
     path: "/shepredicts",
     name: "ShePredicts",
     component: ShePredicts,
+    props: true,
+  },
+  {
+    path: "/shepredicts/home",
+    name: "ShePredictsHome",
+    component: ShePredictsHome,
     props: true,
   },
   {

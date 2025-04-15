@@ -10,7 +10,7 @@ import HomeSection from "../../layouts/HomeSection.vue";
 <template>
   <Header />
 
-  <TitleSection :img="Images.PROFILE_COVER" type="Gaming" color="pink2" title="Predict. Compete."
+  <TitleSection :img="Images.SHEPREDICTS_COVER" type="Gaming" color="pink2" title="Predict. Compete."
     subtitle="Celebrate Women's Football."
     text="Join the ultimate Huddle game. Build leagues, make bold predictions and champion your favorite players." />
 

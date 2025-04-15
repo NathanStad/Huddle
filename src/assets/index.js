@@ -24,8 +24,13 @@ import opportunitiesCover from "./img/opportunities/opportunities_cover.jpeg";
 import storiesCover from "./img/stories/stories_cover.jpeg";
 import agendaCover from "./img/agenda/agenda_cover.png";
 import informationsCover from "./img/informations/informations_cover.jpeg";
-import profileCover from "./img/profile/profile_cover.jpeg";
 import contactCover from "./img/contact/contact_cover.png";
+
+// ShePredicts
+import shepredictsCover from "./img/shepredicts/shepredicts_cover.jpeg";
+import shepredictsCloud from "./img/shepredicts/cloud.svg";
+import shepredictsPlayer from "./img/shepredicts/Joueuse.png";
+
 
 import shop from "./icons/shop.svg";
 import ball from "./icons/ball.svg";
@@ -66,8 +71,11 @@ export default {
   STORIES_COVER: storiesCover,
   AGENDA_COVER: agendaCover,
   INFORMATIONS_COVER: informationsCover,
-  PROFILE_COVER: profileCover,
   CONTACT_COVER: contactCover,
+  
+  SHEPREDICTS_COVER: shepredictsCover,
+  SHEPREDICTS_CLOUD: shepredictsCloud,
+  SHEPREDICTS_PLAYER: shepredictsPlayer,
 
   SHOP: shop,
   BALL: ball,
