@@ -5,7 +5,7 @@ import Stories from "../components/Stories.vue";
 import Agenda from "../components/Agenda.vue";
 import Opportunities from "../components/Opportunities.vue";
 import Informations from "../components/Informations.vue";
-import ShePredicts from "../components/ShePredicts.vue";
+import ShePredicts from "../components/ShePredicts/ShePredicts.vue";
 import Profile from "../components/Profile.vue";
 import Contact from "../components/Contact.vue";
 import EventDetails from "../components/EventDetails.vue";

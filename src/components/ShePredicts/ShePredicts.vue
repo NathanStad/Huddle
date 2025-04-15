@@ -1,10 +1,10 @@
 <script setup>
-import Header from "./Header.vue";
-import Footer from "./Footer.vue";
-import TitleSection from "../layouts/TitleSection.vue";
-import PageBody from "../layouts/PageBody.vue";
-import Images from '../assets';
-import HomeSection from "../layouts/HomeSection.vue";
+import Header from "../Header.vue";
+import Footer from "../Footer.vue";
+import TitleSection from "../../layouts/TitleSection.vue";
+import PageBody from "../../layouts/PageBody.vue";
+import Images from '../../assets';
+import HomeSection from "../../layouts/HomeSection.vue";
 </script>
 
 <template>
