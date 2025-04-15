@@ -43,7 +43,9 @@ const login = async () => {
     };
     loginData.value = await fetchAPI('POST', 'users/login', creds);
     const token = await loginData.value.token;
+    const id = await loginData.value.id;
     storeData("authToken", token.token);
+    storeData("id", id);
     await fetchUserData();
   } catch (error) {
     console.error('Error logging in:', error);

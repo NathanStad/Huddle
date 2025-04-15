@@ -5,11 +5,18 @@ import TitleSection from "../layouts/TitleSection.vue";
 import PageBody from "../layouts/PageBody.vue";
 import Images from '../assets';
 import TypicalParagraphe from "../layouts/TypicalParagraphe.vue";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import fetchAPI from "../composable/fetchAPI";
 import PinkButton from "../layouts/PinkButton.vue";
 import OpportunitiesCard from "../layouts/OpportunitiesCard.vue";
 import Filters from "./Filters.vue";
+import isAdmin from "../composable/isAdmin";
+
+const isAdminUser = ref(false);
+
+onMounted(async () => {
+  isAdminUser.value = await isAdmin();
+})
 
 const opportunities = ref([]);
 const loading = ref(false);
@@ -17,10 +24,12 @@ const isSettingsPopupOpen = ref(false);
 
 const openSettingsPopup = () => {
   isSettingsPopupOpen.value = true;
+  document.body.style.overflow = 'hidden';
 };
 
 const closeSettingsPopup = () => {
   isSettingsPopupOpen.value = false;
+  document.body.style.overflow = 'auto';
 };
 
 const fetchOpportunities = async () => {
@@ -80,7 +89,8 @@ const addOpportunity = async () => {
       <div class="flex justify-between gap-4">
         <input type="text" placeholder="Search keywords" class="p-2 border rounded-lg flex-1">
         <img :src="Images.FILTER" alt="Filters"
-          class="aspect-square border border-dark-pink/70 rounded-lg p-3 cursor-pointer" @click="openSettingsPopup">
+          class="aspect-square border border-dark-pink/70 hover:bg-dark-pink/20 rounded-lg p-3 cursor-pointer transition"
+          @click="openSettingsPopup">
       </div>
     </section>
 
@@ -90,7 +100,7 @@ const addOpportunity = async () => {
 
     <img :src="Images.PLAYER1" alt="" class="-ml-20 w-full md:w-1/2 lg:w-1/3">
 
-    <form @submit.prevent="addOpportunity" class="my-10">
+    <form v-if="isAdminUser" @submit.prevent="addOpportunity" class="my-10">
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">
         <input v-model="newOpportunity.title" type="text" placeholder="Title" class="p-2 border rounded">
         <textarea v-model="newOpportunity.description" placeholder="Description"

@@ -5,11 +5,18 @@ import TitleSection from "../layouts/TitleSection.vue";
 import PageBody from "../layouts/PageBody.vue";
 import Images from '../assets';
 import TypicalParagraphe from "../layouts/TypicalParagraphe.vue";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import fetchAPI from "../composable/fetchAPI";
 import PinkButton from "../layouts/PinkButton.vue";
 import EventCard from "../layouts/EventCard.vue";
 import HomeSection from "../layouts/HomeSection.vue";
+import isAdmin from "../composable/isAdmin";
+
+const isAdminUser = ref(false)
+
+onMounted(async () => {
+  isAdminUser.value = await isAdmin()
+})
 
 const themes = ["all events", "events", "workshops", "certifications", "competitions", "camps"];
 const activeTheme = ref("all events");
@@ -138,7 +145,7 @@ const addEvent = async () => {
     <img :src="Images.PLAYER3" alt="" class="ml-20 w-full md:w-1/2 lg:w-1/3">
 
     <HomeSection title="Newsletter" subtitle="Sign up to make sure you don't miss any more events!"
-      description="Be the first to hear about new workshops, open registrations, and key competitions.">
+      description="Be the first to hear about new workshops, open registrations, and key competitions." class="mb-10">
       <ul class="flex flex-col gap-4 py-3">
         <li class="flex items-center gap-3"><img :src="Images.CHECK" alt="Pink check icon">
           Latest releases and tips
@@ -164,7 +171,7 @@ const addEvent = async () => {
       </form>
     </HomeSection>
 
-    <form @submit.prevent="addEvent" class="my-10">
+    <form v-if="isAdminUser" @submit.prevent="addEvent" class="mb-10">
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">
         <select v-model="newEvent.theme" class="p-2 border rounded" required>
           <option v-for="theme in themes" :value="theme">{{ capitalize(theme) }}</option>

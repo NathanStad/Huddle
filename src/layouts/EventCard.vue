@@ -11,9 +11,9 @@ const props = defineProps({
 
 <template>
   <section
-    class="grid grid-cols-[1fr_2fr] gap-2 w-full cursor-pointer bg-pink2/20 border border-pink2 px-4 py-2 rounded-2xl"
+    class="grid grid-cols-[1fr_2fr] gap-2 w-full cursor-pointer bg-pink2/20 border border-pink2 px-2 py-2 rounded-2xl"
     @click="$router.push(`/agenda/${eventData._id}`)">
-    <img :src="eventData.image" :alt="eventData.title" class="rounded-2xl h-full object-cover">
+    <img :src="eventData.image" :alt="eventData.title" class="rounded-xl h-full object-cover">
 
     <div class="flex flex-col gap-2">
       <span class="text-pink2 capitalize">{{ eventData.theme }}</span>

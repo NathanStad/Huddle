@@ -44,10 +44,21 @@ watch(mobileMenuOpen, (isOpen) => {
         </router-link>
 
         <button @click="toggleMobileMenu" class="text-dark-pink focus:outline-none cursor-pointer z-50">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path v-if="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M6 18L18 6M6 6l12 12" />
-            <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <svg class="w-8 h-8 transition-transform duration-300 ease-in-out" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor">
+            <g :class="{ 'opacity-0': mobileMenuOpen, 'opacity-100': !mobileMenuOpen }"
+              class="transition-opacity duration-200">
+              <!-- Hamburger (3 lines) -->
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16" />
+            </g>
+            <g :class="{ 'opacity-100 rotate-0': mobileMenuOpen, 'opacity-0 rotate-45': !mobileMenuOpen }"
+              class="transition-all duration-300 origin-center absolute top-0 left-0">
+              <!-- Cross (X) -->
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6L18 18" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6" />
+            </g>
           </svg>
         </button>
       </div>

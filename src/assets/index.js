@@ -24,7 +24,7 @@ import opportunitiesCover from "./img/opportunities/opportunities_cover.jpeg";
 import storiesCover from "./img/stories/stories_cover.jpeg";
 import agendaCover from "./img/agenda/agenda_cover.png";
 import informationsCover from "./img/informations/informations_cover.jpeg";
-import profileCover from "./img/profile/profile_cover.jpeg";
+import shepredictsCover from "./img/shepredicts/shepredicts_cover.jpeg";
 import contactCover from "./img/contact/contact_cover.png";
 
 import shop from "./icons/shop.svg";
@@ -66,7 +66,7 @@ export default {
   STORIES_COVER: storiesCover,
   AGENDA_COVER: agendaCover,
   INFORMATIONS_COVER: informationsCover,
-  PROFILE_COVER: profileCover,
+  SHEPREDICTS_COVER: shepredictsCover,
   CONTACT_COVER: contactCover,
 
   SHOP: shop,

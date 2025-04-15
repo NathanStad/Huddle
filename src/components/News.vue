@@ -5,10 +5,17 @@ import TitleSection from "../layouts/TitleSection.vue";
 import PageBody from "../layouts/PageBody.vue";
 import fetchAPI from "../composable/fetchAPI";
 import NewsCard from "../layouts/NewsCard.vue";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import Images from '../assets';
 import TypicalParagraphe from "../layouts/TypicalParagraphe.vue";
 import PinkButton from "../layouts/PinkButton.vue";
+import isAdmin from "../composable/isAdmin";
+
+const isAdminUser = ref(false)
+
+onMounted(async () => {
+  isAdminUser.value = await isAdmin()
+})
 
 const blogDataArticles = ref([]);
 const blogDataNews = ref([]);
@@ -89,7 +96,7 @@ const addArticle = async () => {
       </div>
     </div>
 
-    <form @submit.prevent="addArticle" class="my-10">
+    <form v-if="isAdminUser" @submit.prevent="addArticle" class="my-10">
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">
         <input v-model="newArticle.title" type="text" placeholder="Title" class="p-2 border rounded">
         <textarea v-model="newArticle.content" placeholder="Content" class="p-2 border rounded h-32"></textarea>

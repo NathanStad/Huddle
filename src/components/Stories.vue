@@ -5,10 +5,18 @@ import TitleSection from "../layouts/TitleSection.vue";
 import PageBody from "../layouts/PageBody.vue";
 import Images from '../assets';
 import TypicalParagraphe from "../layouts/TypicalParagraphe.vue";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import fetchAPI from "../composable/fetchAPI";
 import PinkButton from "../layouts/PinkButton.vue";
 import PodcastCard from "../layouts/PodcastCard.vue";
+import StoriesCarousel from "./StoriesCarousel.vue";
+import isAdmin from "../composable/isAdmin";
+
+const isAdminUser = ref(false)
+
+onMounted(async () => {
+  isAdminUser.value = await isAdmin()
+})
 
 const podcasts = ref([]);
 const loading = ref(false);
@@ -79,6 +87,24 @@ const addPodcast = async () => {
       clips from matches, training, and life moments, articles on resilience and success and experiences from our
       Huddle community." />
 
+    <StoriesCarousel :stories="[
+      {
+        name: 'Marion Chevalley',
+        text: 'Coaching is...',
+        image: Images.BLOG_COVER
+      },
+      {
+        name: 'Anna Gilliand',
+        text: 'I love to give tactical advices to my players.',
+        image: Images.OPPORTUNITIES_COVER
+      },
+      {
+        name: 'Julia Rodrigo',
+        text: 'Seeing a player...',
+        image: Images.INFORMATIONS_COVER
+      }
+    ]" class="-mt-5 mb-10" />
+
     <TypicalParagraphe theme="Podcasts" textColor="gold" title="Coaching analyzed, explained and shared."
       subtitle="Listen to our exclusive podcast series featuring female coaches, football experts and training specialists."
       content="Episodes cover; match analysis & breakdowns, real coaching experiences, interviews with professionals, tips, challenges & mindset tools" />
@@ -89,7 +115,7 @@ const addPodcast = async () => {
 
     <img :src="Images.PLAYER_STORIES" alt="" class="-ml-25 w-full md:w-1/2 lg:w-1/3">
 
-    <form @submit.prevent="addPodcast" class="my-10">
+    <form v-if="isAdminUser" @submit.prevent="addPodcast" class="my-10">
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">
         <input v-model="newPodcast.number" type="number" class="p-2 border rounded">
         <input v-model="newPodcast.theme" type="text" placeholder="Theme" class="p-2 border rounded">
