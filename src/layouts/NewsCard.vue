@@ -53,7 +53,7 @@ const tagStyles = props.blogData.tags.map((_, index) => {
 </script>
 
 <template>
-  <section class="flex flex-col gap-4 w-full">
+  <section class="flex flex-col gap-4 w-full" @click="$router.push(`/news/${blogData._id}`)">
     <img :src="blogData.image" :alt="blogData.title" class="rounded-2xl w-full md:w-1/2 lg:w-1/3">
     <p :class="`${textColor} text-sm font-semibold`">{{ blogData.author }} • {{ new
       Date(blogData.date).toLocaleDateString('en-GB', { month: 'long', day: '2-digit', year: 'numeric' }) }}</p>

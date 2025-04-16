@@ -6,6 +6,10 @@ import Images from '../assets';
 import { ref, onMounted } from "vue";
 import isLogged from "../composable/isLogged";
 import PinkButton from "../layouts/PinkButton.vue";
+import { useRouter, useRoute } from 'vue-router';
+
+const router = useRouter();
+const route = useRoute();
 
 const isUserLogged = ref(false)
 
@@ -61,8 +65,9 @@ const login = async () => {
     const id = await loginData.value.id;
     storeData("authToken", token.token);
     storeData("id", id);
+    isUserLogged.value = true;
     await fetchUserData();
-    window.location.reload();
+    router.push(route.query.redirect || "/profile");
   } catch (error) {
     console.error('Error logging in:', error);
   }
@@ -73,7 +78,8 @@ const logout = async () => {
     await fetchAPI('POST', 'users/logout');
     deleteData("authToken");
     deleteData("id");
-    window.location.reload();
+    isUserLogged.value = false;
+    router.push("/profile");
   } catch (error) {
     console.error('Error logging out:', error);
   }
@@ -137,12 +143,14 @@ const deleteData = (key) => {
     <form v-else @submit.prevent="login" class="space-y-5 my-10">
       <div class="space-y-1">
         <label for="email" class="font-semibold text-sm">Email</label>
-        <input id="email" v-model="newLogin.email" type="email" placeholder="john.doe@gmail.com" class="w-full rounded-lg border border-dark-pink px-4 py-2 text-dark-pink/70" required />
+        <input id="email" v-model="newLogin.email" type="email" placeholder="john.doe@gmail.com"
+          class="w-full rounded-lg border border-dark-pink px-4 py-2 text-dark-pink/70" required />
       </div>
 
       <!-- <div class="flex flex-col gap-1"> -->
-        <label for="password" class="font-semibold text-sm">Password</label>
-        <input id="password" v-model="newLogin.password" type="password" placeholder="••••••••" class="w-full rounded-lg border border-dark-pink px-4 py-2 text-dark-pink/70" required />
+      <label for="password" class="font-semibold text-sm">Password</label>
+      <input id="password" v-model="newLogin.password" type="password" placeholder="••••••••"
+        class="w-full rounded-lg border border-dark-pink px-4 py-2 text-dark-pink/70" required />
       <!-- </div> -->
 
       <div class="flex flex-col gap-3">
@@ -152,9 +160,3 @@ const deleteData = (key) => {
     </form>
   </PageBody>
 </template>
-
-<style scoped>
-.home {
-  color: rgb(145, 255, 0);
-}
-</style>

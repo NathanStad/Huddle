@@ -34,11 +34,11 @@ const eventData3 = ref({
 });
 
 const formattedDate = computed(() => {
-    const date = new Date();
-    const options = { day: "numeric", month: "long" };
-    const formattedMonth = date.toLocaleDateString("en-US", { month: "long" });
-    const formattedDay = date.getDate();
-    return `${formattedDay}-${formattedDay + 1} of ${formattedMonth}`;
+  const date = new Date();
+  const options = { day: "numeric", month: "long" };
+  const formattedMonth = date.toLocaleDateString("en-US", { month: "long" });
+  const formattedDay = date.getDate();
+  return `${formattedDay}-${formattedDay + 1} of ${formattedMonth}`;
 });
 </script>
 
@@ -46,20 +46,22 @@ const formattedDate = computed(() => {
   <Header />
 
   <PageBody class="mt-40 text-dark-pink">
-    <img :src="Images.SHEPREDICTS_CLAP" alt="">
+    <img :src="Images.SHEPREDICTS_PREDICT" alt="">
     <div class="m-10">
-        <p class="text-center text-3xl font-berlin mb-5">Their goals. Your prediction.</p>
-        <p class="text-center font-semibold italic">What will be the score of the match?</p>
+      <p class="text-center text-3xl font-berlin mb-5">Their goals. Your prediction.</p>
+      <p class="text-center font-semibold italic">What will be the score of the match?</p>
     </div>
-    <div>
-        <p class="mb-5 font-semibold">{{ formattedDate }}</p> 
-        <MatchCard :data="eventData" />
-        <MatchCard :data="eventData2" />
-        <MatchCard :data="eventData3" />
+
+    <p class="mb-5 font-semibold">{{ formattedDate }}</p>
+    <div class="space-y-10">
+      <MatchCard :data="eventData" />
+      <MatchCard :data="eventData2" />
+      <MatchCard :data="eventData3" />
     </div>
+
     <div class="flex flex-col gap-5 items-center m-10">
-        <PinkButton class="w-full" url="/shepredicts/mvp">Bets the MVP</PinkButton>
-        <PinkButton class="w-full" bgColor="gold"  url="/shepredicts/ranking">See ranking</PinkButton>
+      <PinkButton class="w-full" url="/shepredicts/mvp">Bet on the MVP</PinkButton>
+      <PinkButton class="w-full" bgColor="gold" hoverColor="gold2" url="/shepredicts/ranking">See ranking</PinkButton>
     </div>
   </PageBody>
 
