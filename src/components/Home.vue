@@ -8,6 +8,7 @@ import HomeCard from "../layouts/HomeCard.vue";
 import HomeSection from "../layouts/HomeSection.vue";
 import NewsCard from "../layouts/NewsCard.vue";
 import PinkButton from "../layouts/PinkButton.vue";
+import StoriesCarousel from "./StoriesCarousel.vue";
 import fetchAPI from "../composable/fetchAPI";
 
 const blogData = ref([]);
@@ -93,6 +94,24 @@ const handleSubmit = () => {
           description="Discover real stories of women who stepped up, coached, and changed their path — and others'. Watch inspiring interviews, quotes and snapshots of their journey."
           :link="{ text: 'See our blog', url: 'news' }" :button="{ text: 'Listen to other stories', url: 'stories' }" />
 
+        <StoriesCarousel :stories="[
+          {
+            name: 'Marion Chevalley',
+            text: 'Coaching is...',
+            image: Images.BLOG_COVER
+          },
+          {
+            name: 'Anna Gilliand',
+            text: 'I love to give tactical advices to my players.',
+            image: Images.OPPORTUNITIES_COVER
+          },
+          {
+            name: 'Julia Rodrigo',
+            text: 'Seeing a player...',
+            image: Images.INFORMATIONS_COVER
+          }
+        ]" />
+
         <HomeSection title="Live News" subtitle="What's happening in women's football & coaching?"
           description="Stay up to date with our latest articles, UEFA insights, training opportunities, and expert takes. Everything you need to stay informed & inspired." />
 
@@ -114,7 +133,7 @@ const handleSubmit = () => {
 
           <form @submit.prevent="handleSubmit" class="flex flex-col gap-2">
             <input type="text" placeholder="Enter your email to join our newsletter" v-model="form.email"
-              class="border border-pink px-4 py-2 text-sm rounded">
+              class="border border-pink px-4 py-2 text-sm rounded" required>
             <p class="text-xs mb-5">We care about your data in our
               <span class="underline cursor-pointer hover:text-black">privacy policy</span>.
             </p>

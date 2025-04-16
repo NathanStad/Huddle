@@ -50,19 +50,19 @@ const sendMessage = async () => {
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">
         <div class="flex flex-col gap-1">
           <label for="fname" class="font-medium">First name</label>
-          <input v-model="newContact.fname" id="fname" type="text" placeholder="First name" class="p-2 border rounded"
+          <input v-model="newContact.fname" id="fname" type="text" placeholder="John" class="p-2 border rounded"
             required>
         </div>
 
         <div class="flex flex-col gap-1">
           <label for="lname" class="font-medium">Last name</label>
-          <input v-model="newContact.lname" id="lname" type="text" placeholder="Last name" class="p-2 border rounded"
+          <input v-model="newContact.lname" id="lname" type="text" placeholder="Doe" class="p-2 border rounded"
             required>
         </div>
 
         <div class="flex flex-col gap-1">
           <label for="email" class="font-medium">Email</label>
-          <input v-model="newContact.email" id="email" type="text" placeholder="you@gmail.com"
+          <input v-model="newContact.email" id="email" type="text" placeholder="john.doe@gmail.com"
             class="p-2 border rounded" required>
         </div>
 
@@ -154,7 +154,7 @@ const sendMessage = async () => {
       content="" />
   </PageBody>
 
-  <div class="w-full h-96 my-8">
+  <div class="w-full h-96 mt-8">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2699.123456789012!2d7.589123456789012!3d47.558123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDMzJzI5LjIiTiA3wrAzNScyMC45IkU!5e0!3m2!1sen!2sch!4v1234567890123!5m2!1sen!2sch"
       width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
