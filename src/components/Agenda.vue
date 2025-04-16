@@ -160,7 +160,7 @@ const addEvent = async () => {
 
       <form @submit.prevent="handleSubmit" class="flex flex-col gap-2">
         <input type="text" placeholder="Enter your email to join our newsletter" v-model="form.email"
-          class="border border-pink px-4 py-2 text-sm rounded">
+          class="border border-pink px-4 py-2 text-sm rounded" required>
         <p class="text-xs mb-5">We care about your data in our
           <span class="underline cursor-pointer hover:text-black">privacy policy</span>.
         </p>
@@ -172,6 +172,9 @@ const addEvent = async () => {
     </HomeSection>
 
     <form v-if="isAdminUser" @submit.prevent="addEvent" class="mb-10">
+      <div class="flex justify-center h-[1px] -mx-5 my-10 bg-black" />
+      <h2 class="text-xl font-semibold mb-10">Add an event</h2>
+
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">
         <select v-model="newEvent.theme" class="p-2 border rounded" required>
           <option v-for="theme in themes" :value="theme">{{ capitalize(theme) }}</option>

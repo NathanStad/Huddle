@@ -116,6 +116,9 @@ const addPodcast = async () => {
     <img :src="Images.PLAYER_STORIES" alt="" class="-ml-25 w-full md:w-1/2 lg:w-1/3">
 
     <form v-if="isAdminUser" @submit.prevent="addPodcast" class="my-10">
+      <div class="flex justify-center h-[1px] -mx-5 my-10 bg-black" />
+      <h2 class="text-xl font-semibold mb-10">Add a podcast</h2>
+
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">
         <input v-model="newPodcast.number" type="number" class="p-2 border rounded">
         <input v-model="newPodcast.theme" type="text" placeholder="Theme" class="p-2 border rounded">

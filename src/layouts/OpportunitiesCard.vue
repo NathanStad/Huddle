@@ -10,7 +10,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="bg-white border-2 border-gold rounded-2xl p-5 text-dark-pink w-full md:w-1/2 lg:w-1/3">
+  <section class="bg-white border-2 border-gold rounded-2xl p-5 text-dark-pink cursor-pointer w-full md:w-1/2 lg:w-1/3"
+    @click="$router.push(`/opportunities/${opportunityData._id}`)">
     <div class="flex items-center justify-between gap-2 mb-3">
       <p class="font-bold text-gold text-sm">{{ opportunityData.club }}</p>
       <p class="font-semibold bg-[#FFFCED] border border-gold rounded-full px-2 text-gold text-xs text-center">{{

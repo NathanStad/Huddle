@@ -78,7 +78,7 @@ const addArticle = async () => {
     text="Explore the latest from the Huddle ecosystem — articles, interviews, trends, and stories that move the game forward" />
 
   <PageBody>
-    <div class="my-15">
+    <div class="mb-15">
       <TypicalParagraphe theme="News" textColor="green" title="What's new in women's football?"
         subtitle="From UEFA matches to local coaching events, this is where it happens first."
         content="Follow the latest trends, match results, reports, and Huddle updates in real-time." />
@@ -97,6 +97,9 @@ const addArticle = async () => {
     </div>
 
     <form v-if="isAdminUser" @submit.prevent="addArticle" class="my-10">
+      <div class="flex justify-center h-[1px] -mx-5 my-10 bg-black" />
+      <h2 class="text-xl font-semibold mb-10">Add an article</h2>
+
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">
         <input v-model="newArticle.title" type="text" placeholder="Title" class="p-2 border rounded">
         <textarea v-model="newArticle.content" placeholder="Content" class="p-2 border rounded h-32"></textarea>

@@ -9,6 +9,8 @@ import ShePredicts from "../components/ShePredicts/ShePredicts.vue";
 import Profile from "../components/Profile.vue";
 import Contact from "../components/Contact.vue";
 import EventDetails from "../components/EventDetails.vue";
+import OpportunitiesDetails from "../components/OpportunitiesDetails.vue";
+import Register from "../components/Register.vue";
 
 const routes = [
   {
@@ -47,6 +49,12 @@ const routes = [
     props: true,
   },
   {
+    path: "/opportunities/:id",
+    name: "OpportunitiesDetails",
+    component: OpportunitiesDetails,
+    props: true,
+  },
+  {
     path: "/shepredicts",
     name: "ShePredicts",
     component: ShePredicts,
@@ -62,6 +70,12 @@ const routes = [
     path: "/profile",
     name: "Profile",
     component: Profile,
+    props: true,
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: Register,
     props: true,
   },
   {

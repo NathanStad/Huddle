@@ -84,7 +84,7 @@ fetchEvent();
           <div class="space-y-2">
             <h3 class="font-semibold">Website</h3>
             <div class="text-sm text-pink2 font-semibold space-y-1">
-              <a :href="event.website" target="_blank" class="hover:underline">{{ event.website }}</a>
+              <a :href="event.website" target="_blank" class="cursor-pointer hover:underline">{{ event.website }}</a>
             </div>
           </div>
         </div>

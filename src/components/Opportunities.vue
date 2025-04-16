@@ -101,6 +101,9 @@ const addOpportunity = async () => {
     <img :src="Images.PLAYER1" alt="" class="-ml-20 w-full md:w-1/2 lg:w-1/3">
 
     <form v-if="isAdminUser" @submit.prevent="addOpportunity" class="my-10">
+      <div class="flex justify-center h-[1px] -mx-5 my-10 bg-black" />
+      <h2 class="text-xl font-semibold mb-10">Add an opportunity</h2>
+
       <div class="flex flex-col gap-4 w-full max-w-md mb-5">
         <input v-model="newOpportunity.title" type="text" placeholder="Title" class="p-2 border rounded">
         <textarea v-model="newOpportunity.description" placeholder="Description"

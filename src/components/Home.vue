@@ -133,7 +133,7 @@ const handleSubmit = () => {
 
           <form @submit.prevent="handleSubmit" class="flex flex-col gap-2">
             <input type="text" placeholder="Enter your email to join our newsletter" v-model="form.email"
-              class="border border-pink px-4 py-2 text-sm rounded">
+              class="border border-pink px-4 py-2 text-sm rounded" required>
             <p class="text-xs mb-5">We care about your data in our
               <span class="underline cursor-pointer hover:text-black">privacy policy</span>.
             </p>
