@@ -30,6 +30,10 @@ import contactCover from "./img/contact/contact_cover.png";
 import shepredictsCover from "./img/shepredicts/shepredicts_cover.jpeg";
 import shepredictsCloud from "./img/shepredicts/cloud.svg";
 import shepredictsPlayer from "./img/shepredicts/Joueuse.png";
+import shepredictsShoe from "./img/shepredicts/foot-chaussure 1.png";
+import shepredictsTable from "./img/shepredicts/game_strategy.png";
+import shepredictsClap from "./img/shepredicts/clap.png";
+import shepredictsClaudia from "./img/shepredicts/player-Claudia.png";
 
 
 import shop from "./icons/shop.svg";
@@ -76,6 +80,10 @@ export default {
   SHEPREDICTS_COVER: shepredictsCover,
   SHEPREDICTS_CLOUD: shepredictsCloud,
   SHEPREDICTS_PLAYER: shepredictsPlayer,
+  SHEPREDICTS_SHOE: shepredictsShoe,
+  SHEPREDICTS_TABLE: shepredictsTable,
+  SHEPREDICTS_CLAP: shepredictsClap,
+  SHEPREDICTS_CLAUDIA: shepredictsClaudia,
 
   SHOP: shop,
   BALL: ball,
